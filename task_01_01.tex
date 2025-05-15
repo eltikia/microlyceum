@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Equality Conditions for Positive Real Variables}
+
+Is the following equality true for all positive real numbers $x$ and $y$:
+\begin{itemize}
+    \item[a)] $(x + y)^2 = x^2 + 2xy + y^2$;
+    \item[b)] $|x + y - 1| = |x + y| - 1$;
+    \item[c)] $|x + y| = |x| + |y|$;
+    \item[d)] $(x + y)^{-2} = x^{-2} + 2x^{-1}y^{-1} + y^{-2}$?
+\end{itemize}
+
+\section*{Solution}
+
+\subsection*{a) $(x + y)^2 = x^2 + 2xy + y^2$}
+
+This is true. From the definition of the square of a sum, we have:
+
+\[
+(x + y)^2 = x^2 + 2xy + y^2.
+\]
+
+\subsection*{b) $|x + y - 1| = |x + y| - 1$}
+
+The equality does not always hold. To show when it doesn't hold, let's take $x = 1$ and $y = 1$. Then:
+
+\[
+|x + y - 1| = |1 + 1 - 1| = |1| = 1
+\]
+and
+\[
+|x + y| - 1 = |1 + 1| - 1 = 2 - 1 = 1.
+\]
+
+This equality doesn't always hold, especially when $x + y - 1 < 0$. For example, if $x = 0.5$ and $y = 0.3$, then:
+
+\[
+|x + y - 1| = |0.5 + 0.3 - 1| = |-0.2| = 0.2
+\]
+and
+\[
+|x + y| - 1 = |0.5 + 0.3| - 1 = 0.8 - 1 = -0.2.
+\]
+
+Thus, the equality doesn't hold.
+
+\subsection*{c) $|x + y| = |x| + |y|$}
+
+This equality holds only if both $x$ and $y$ are positive numbers. Therefore, for any positive real numbers $x$ and $y$, the equality holds:
+
+\[
+|x + y| = |x| + |y|.
+\]
+
+\subsection*{d) $(x + y)^{-2} = x^{-2} + 2x^{-1}y^{-1} + y^{-2}$}
+
+This equation is false. We can provide a counterexample. Let $x = 1$ and $y = 2$. Let’s calculate both sides of the equation.
+
+Left-hand side:
+\[
+(x + y)^{-2} = (1 + 2)^{-2} = 3^{-2} = \frac{1}{9}.
+\]
+
+Right-hand side:
+\[
+x^{-2} + 2x^{-1}y^{-1} + y^{-2} = 1^{-2} + 2 \cdot 1^{-1} \cdot 2^{-1} + 2^{-2} = 1 + \frac{2}{2} + \frac{1}{4} = 1 + 1 + 0.25 = 2.25.
+\]
+
+We see that:
+
+\[
+\frac{1}{9} \neq 2.25.
+\]
+
+Thus, the equality does not hold.
+\end{document}
