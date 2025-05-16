@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section{Numbers with Repeating Digits}
+
+Is the following inequality true:
+\begin{itemize}
+\item[a)] \( 0,(123) < 0,1(23) \);
+\item[b)] \( 0,(2423) < 0,24(23) \);
+\item[c)] \( 0,(423) < 0,4(23) \);
+\item[d)] \( 0,1(23) < 0,124 \)?
+\end{itemize}
+
+\section{Solution}
+
+To assess the truth of the given inequalities, let's convert the repeating decimals into fractions or estimate their decimal values.
+
+\subsection{a) \( 0,(123) < 0,1(23) \)}
+
+\[
+0,(123) = 0.123123123... \quad \text{and} \quad 0,1(23) = 0.1 + 0.0(23) = 0.1 + 0.0232323... \approx 0.1232323...
+\]
+Comparison:
+\[
+0.123123... < 0.123232... \quad \text{– True}
+\]
+
+\subsection{b) \( 0,(2423) < 0,24(23) \)}
+
+\[
+0,(2423) = 0.242324232423... \quad \text{and} \quad 0,24(23) = 0.24 + 0.0(23) = 0.24 + 0.0232323... \approx 0.2423232323...
+\]
+Comparison:
+\[
+0.24232423... < 0.24232323... \quad \text{– False}
+\]
+
+\subsection{c) \( 0,(423) < 0,4(23) \)}
+
+\[
+0,(423) = 0.423423423... \quad \text{and} \quad 0,4(23) = 0.4 + 0.0(23) = 0.4 + 0.0232323... \approx 0.423232323...
+\]
+Comparison:
+\[
+0.423423... < 0.42323232... \quad \text{– False}
+\]
+
+\subsection{d) \( 0,1(23) < 0,124 \)}
+
+\[
+0,1(23) = 0.1232323... 
+\]
+Comparison:
+\[
+0.12323232... < 0.124 \quad \text{– True}
+\]
+
+\end{document}
