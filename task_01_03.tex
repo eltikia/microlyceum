@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section{Counting Real Solutions of a Quartic Equation}
+
+For a given real number $a$, let $R(a)$ denote the number of real numbers $x$ such that $x^4 - 2x^2 = a$. Then:
+\begin{itemize}
+\item[a)] $R(-1) = 2$;
+\item[b)] $R(0) = 3$;
+\item[c)] $R(1) = 4$;
+\item[d)] $R(-2) = 1$.
+\end{itemize}
+
+\section{Solution}
+
+To find $R(a)$, we transform the equation into a function in the variable $y = x^2$. We have:
+
+\[
+x^4 - 2x^2 = y^2 - 2y = a \implies y^2 - 2y - a = 0
+\]
+
+Solving this quadratic equation, we use the quadratic formula:
+
+\[
+y = \frac{2 \pm \sqrt{(2)^2 - 4 \cdot 1 \cdot (-a)}}{2 \cdot 1} = 1 \pm \sqrt{1 + a}
+\]
+
+The real numbers $x$ corresponding to a given $y$ are such that $y = x^2 \geq 0$. Thus, we need to investigate the conditions for $y$:
+
+\[
+1 + a \geq 0 \implies a \geq -1
+\]
+
+Now we analyse specific values of $a$:
+
+1. For $a = -1$:
+\[
+y = 1 \pm \sqrt{0} = 1
+\]
+There are two solutions: $x^2 = 1 \implies x = 1$ or $x = -1$.
+\[
+R(-1) = 2 \quad \text{(correct)}
+\]
+
+2. For $a = 0$:
+\[
+y = 1 \pm \sqrt{1} \implies y = 2 \text{ or } 0
+\]
+For $y = 2 \implies x^2 = 2 \implies x = \sqrt{2}, -\sqrt{2}$.
+For $y = 0 \implies x = 0$.
+\[
+R(0) = 3 \quad \text{(correct)}
+\]
+
+3. For $a = 1$:
+\[
+y = 1 \pm \sqrt{2}
+\]
+For $y = 1 + \sqrt{2} \implies x^2 = 1 + \sqrt{2} \implies x = \sqrt{1+\sqrt{2}}, -\sqrt{1+\sqrt{2}}$.
+For $y = 1 - \sqrt{2} \text{ (no solutions)}$.
+\[
+R(1) = 2 \quad \text{(incorrect)}
+\]
+
+4. For $a = -2$:
+\[
+y = 1 \pm \sqrt{-1} \text{ (no solutions)}
+\]
+\[
+R(-2) = 0 \quad \text{(incorrect)}
+\]
+
+\end{document}
