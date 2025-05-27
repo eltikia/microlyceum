@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Parity of Expressions}
+\author{}
+\date{}
+\maketitle
+
+\section{Problem Statement}
+
+For any positive integer \( n \), the following number is even:
+\begin{enumerate}
+\item[a)] \( 3^n + n + 1 \)
+\item[b)] \( n^2 + n \)
+\item[c)] \( 3^n + n \)
+\item[d)] \( 3^n + 5^n \)
+\end{enumerate}
+
+\section{Solution}
+
+\subsection{a) \( 3^n + n + 1 \)}
+
+- For \( n = 1 \):
+\[
+3^1 + 1 + 1 = 3 + 1 + 1 = 5 \quad \text{(odd)}
+\]
+- For \( n = 2 \):
+\[
+3^2 + 2 + 1 = 9 + 2 + 1 = 12 \quad \text{(even)}
+\]
+- For \( n = 3 \):
+\[
+3^3 + 3 + 1 = 27 + 3 + 1 = 31 \quad \text{(odd)}
+\]
+
+The expression does not consistently return even results.
+
+\subsection{b) \( n^2 + n \)}
+
+We can factor this expression:
+\[
+n^2 + n = n(n + 1)
+\]
+Since \( n \) and \( n + 1 \) are consecutive integers, one of them is always even. Thus, \( n(n + 1) \) is always even.
+
+\subsection{c) \( 3^n + n \)}
+
+- For \( n = 1 \):
+\[
+3^1 + 1 = 3 + 1 = 4 \quad \text{(even)}
+\]
+- For \( n = 2 \):
+\[
+3^2 + 2 = 9 + 2 = 11 \quad \text{(odd)}
+\]
+- For \( n = 3 \):
+\[
+3^3 + 3 = 27 + 3 = 30 \quad \text{(even)}
+\]
+
+This expression does not consistently return even results.
+
+\subsection{d) \( 3^n + 5^n \)}
+
+Both \( 3^n \) and \( 5^n \) are odd for any positive integer \( n \):
+- Odd + Odd = Even.
+
+Thus, the expression \( 3^n + 5^n \) is always even.
+
+\section*{Summary}
+
+The only expression that is guaranteed to be even for any positive integer \( n \) is:
+
+\textbf{b) \( n^2 + n \)} and \textbf{d) \( 3^n + 5^n \)}.
+
+\end{document}
