@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Checking the greatest common divisor}
+\author{}
+\date{}
+\maketitle
+
+\section*{Task}
+
+Is the greatest common divisor given correctly:
+\begin{itemize}
+\item a) \( \text{GCD}(42, 84) = 14 \);
+\item b) \( \text{GCD}(10^9 + 5, 10^9 + 35) = 15 \);
+\item c) \( \text{GCD}(30, 42) = 6 \);
+\item d) \( \text{GCD}(10^7 + 14, 10^7 + 21) = 7 \)? \end{itemize}
+
+\section*{Solution:}
+
+We will evaluate the validity of each of the theorems concerning the greatest common divisor (GCD), also known as the greatest common factor (GCD).
+
+\subsection*{a) \( \text{GCD}(42, 84) = 14 \)}
+
+To find the GCD of 42 and 84, we will apply prime factorization:
+
+\[
+42 = 2 \times 3 \times 7
+\]
+\[
+84 = 2^2 \times 3 \times 7
+\]
+
+The common factors are: \( 2^1 \), \( 3^1 \), and \( 7^1 \).
+
+GCD is calculated as:
+\[
+\text{GCD}(42, 84) = 2^1 \times 3^1 \times 7^1 = 42.
+\]
+
+So the statement \( \text{GCD}(42, 84) = 14 \) is invalid.
+
+\subsection*{b) \( \text{GCD}(10^9 + 5, 10^9 + 35) = 15 \)}
+
+Let \( a = 10^9 + 5 \) and \( b = 10^9 + 35 \).
+
+We can simplify:
+\[
+b - a = (10^9 + 35) - (10^9 + 5) = 30.
+\]
+
+So we calculate:
+\[
+\text{GCD}(a, b) = \text{GCD}(10^9 + 5, 30).
+\]
+
+Now let's find the GCD of \( 10^9 + 5 \) and 30. The prime factorization of 30 is:
+\[
+30 = 2 \times 3 \times 5.
+\]
+
+Let's calculate \( 10^9 + 5 \mod 30 \):
+\[
+10^9 \mod 30 \equiv 10 \quad (\text{since } 10 \equiv 10 \mod 30).
+\]
+So,
+\[
+10^9 + 5 \equiv 10 + 5 \equiv 15 \mod 30.
+\]
+
+We calculate the GCD:
+\[
+\text{GCD}(15, 30) = 15.
+\]
+
+So the statement \( \text{GCD}(10^9 + 5, 10^9 + 35) = 15 \) is correct.
+
+\subsection*{c) \( \text{GCD}(30, 42) = 6 \)}
+
+We will apply prime factorization:
+\[
+30 = 2 \times 3 \times 5
+\]
+\[
+42 = 2 \times 3 \times 7
+\]
+
+The common factors are \( 2 \) and \( 3 \):
+\[
+\text{GCD}(30, 42) = 2^1 \times 3^1 = 6.
+\]
+
+Therefore, the statement \( \text{GCD}(30, 42) = 6 \) is correct.
+
+\subsection*{d) \( \text{GCD}(10^7 + 14, 10^7 + 21) = 7 \)}
+
+Let \( c = 10^7 + 14 \) and \( d = 10^7 + 21 \).
+
+We can simplify:
+\[
+d - c = (10^7 + 21) - (10^7 + 14) = 7.
+\]
+
+Now we calculate:
+\[
+\text{GCD}(c, d) = \text{GCD}(10^7 + 14, 7).
+\]
+
+First we calculate \( 10^7 + 14 \mod 7 \):
+\[
+10^7 \mod 7 \equiv 3 \quad (\text{since } 10 \equiv 3 \mod 7).
+\]
+So,
+\[
+10^7 + 14 \equiv 3 + 0 \equiv 3 \mod 7.
+\]
+
+We calculate the GCD:
+\[
+\text{GCD}(3, 7) = 1.
+\]
+
+So the statement \( \text{GCD}(10^7 + 14, 10^7 + 21) = 7 \) is incorrect.
+
+\end{document}
