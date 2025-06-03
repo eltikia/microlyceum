@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\textbf{Polynomial Divisibility Check}
+
+Is the polynomial \( x^{100} - 3x^{50} + 2 \) divisible by the polynomial
+\begin{itemize}
+    \item[a)] \( x + 2 \);
+    \item[b)] \( x + 1 \);
+    \item[c)] \( x^2 - 3x + 2 \);
+    \item[d)] \( x - 1 \)?
+\end{itemize}
+
+To determine whether the polynomial \( f(x) = x^{100} - 3x^{50} + 2 \) is divisible by the given polynomials, we will use the Remainder Theorem. According to this theorem, a polynomial \( f(x) \) is divisible by \( x - r \) if and only if \( f(r) = 0 \).
+
+\subsection*{a) \( x + 2 \)}
+
+To check if \( f(x) \) is divisible by \( x + 2 \), we will evaluate \( f(-2) \):
+
+\[
+f(-2) = (-2)^{100} - 3(-2)^{50} + 2
+\]
+
+Calculating each term:
+\begin{itemize}
+    \item \( (-2)^{100} = 2^{100} \)
+    \item \( (-2)^{50} = 2^{50} \)
+\end{itemize}
+
+Thus,
+
+\[
+f(-2) = 2^{100} - 3 \cdot 2^{50} + 2
+\]
+
+Since \( f(-2) \) is not equal to zero, \( f(x) \) is not divisible by \( x + 2 \).
+
+\subsection*{b) \( x + 1 \)}
+
+To check if \( f(x) \) is divisible by \( x + 1 \), we evaluate \( f(-1) \):
+
+\[
+f(-1) = (-1)^{100} - 3(-1)^{50} + 2
+\]
+
+Calculating each term:
+\begin{itemize}
+    \item \( (-1)^{100} = 1 \)
+    \item \( (-1)^{50} = 1 \)
+\end{itemize}
+
+Thus,
+
+\[
+f(-1) = 1 - 3 \cdot 1 + 2 = 1 - 3 + 2 = 0
+\]
+
+Since \( f(-1) = 0 \), \( f(x) \) is divisible by \( x + 1 \).
+
+\subsection*{c) \( x^2 - 3x + 2 \)}
+
+The polynomial \( x^2 - 3x + 2 \) can be factored as follows:
+
+\[
+x^2 - 3x + 2 = (x - 1)(x - 2)
+\]
+
+To determine if \( f(x) = x^{100} - 3x^{50} + 2 \) is divisible by \( x^2 - 3x + 2 \), we need to check if \( f(x) \) is equal to zero at the roots of \( x^2 - 3x + 2 \), which are \( x = 1 \) and \( x = 2 \).
+
+\subsubsection*{Step 1: Evaluate at \( x = 1 \)}
+
+We already calculated \( f(1) \):
+
+\[
+f(1) = 1^{100} - 3 \cdot 1^{50} + 2 = 1 - 3 + 2 = 0
+\]
+
+Since \( f(1) = 0 \), \( f(x) \) is divisible by \( x - 1 \). 
+
+\subsubsection*{Step 2: Evaluate at \( x = 2 \)}
+
+Next, we will evaluate \( f(2) \):
+
+\[
+f(2) = 2^{100} - 3 \cdot 2^{50} + 2
+\]
+
+Calculating each term:
+
+- \( 2^{100} \) is a very large number.
+- \( 2^{50} \) is also a large number, but significantly smaller than \( 2^{100} \).
+
+Now, let's break it down:
+
+1. Calculate \( 2^{100} \):
+   - This is \( 1267650600228229401496703205376 \).
+
+2. Calculate \( 3 \cdot 2^{50} \):
+   - \( 2^{50} = 1125899906842624 \).
+   - Therefore, \( 3 \cdot 2^{50} = 3 \cdot 1125899906842624 = 3377699720527872 \).
+
+Now we can substitute these values into \( f(2) \):
+
+\[
+f(2) = 1267650600228229401496703205376 - 3377699720527872 + 2
+\]
+
+This simplifies to:
+
+\[
+f(2) = 1267650600224852901578117607498 \quad (\text{which is not } 0)
+\]
+
+\subsubsection*{Conclusion for Part c:}
+
+Since \( f(2) \neq 0 \), we conclude that \( f(x) \) is \textbf{not divisible} by \( x^2 - 3x + 2 \).
+
+\subsection*{d) \( x - 1 \)}
+
+As calculated above, since \( f(1) = 0 \), \( f(x) \) is divisible by \( x - 1 \).
+
+\subsection*{Summary of Results:}
+\begin{itemize}
+    \item a) \( x + 2 \): Not divisible
+    \item b) \( x + 1 \): Divisible
+    \item c) \( x^2 - 3x + 2 \): Not divisible
+    \item d) \( x - 1 \): Divisible
+\end{itemize}
+
+\end{document}
