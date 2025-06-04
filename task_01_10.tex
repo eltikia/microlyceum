@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Length of the Lateral Edge of a Regular Pyramid with an \( n \)-sided Base}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Let \( k(n) \) be the length of the lateral edge of a regular pyramid with an \( n \)-sided base, in which both the height and the length of the base edge are equal to 1. We aim to determine the values of \( k(n) \) for \( n = 3, 4, 5, 6 \).
+
+\section*{Step 1: Pyramid Structure and Geometry}
+
+\subsection*{Characteristics of the Regular Pyramid}
+\begin{itemize}
+    \item The base is a regular \( n \)-gon.
+    \item The height \( h \) of the pyramid is equal to 1.
+    \item The length of each edge of the base polygon is also equal to 1.
+\end{itemize}
+
+\subsection*{Lateral Edge}
+The lateral edge connects the apex \( O \) of the pyramid to a vertex \( A \) of the base.
+
+\section*{Step 2: Identifying Key Elements}
+
+\begin{itemize}
+    \item Let \( O \) be the apex of the pyramid and \( G \) be the center of the base polygon.
+    \item The length of the lateral edge \( k(n) \) can be calculated using the Pythagorean theorem in triangle \( OGA \).
+\end{itemize}
+
+\section*{Step 3: Calculating \( k(n) \)}
+
+The length of the lateral edge \( k(n) \) can be expressed as:
+
+\[
+k(n) = \sqrt{h^2 + GA^2}
+\]
+
+where:
+\begin{itemize}
+    \item \( h = 1 \) (the height of the pyramid).
+    \item \( GA \) is the distance from the center \( G \) of the base to a vertex \( A \).
+\end{itemize}
+
+\subsection*{Step 3.1: Finding \( GA \)}
+
+To find \( GA \), we consider the geometry of the regular \( n \)-gon inscribed in a circle of radius \( R \):
+
+\begin{itemize}
+    \item The radius \( R \) of the circumcircle of the regular \( n \)-gon can be found using the formula:
+    \[
+    R = \frac{a}{2 \sin(\pi/n)}
+    \]
+    where \( a \) is the length of a side of the polygon. Since \( a = 1 \), we have:
+    \[
+    R = \frac{1}{2 \sin(\pi/n)}
+    \]
+    \item This distance \( GA \) is equal to \( R \).
+\end{itemize}
+
+\section*{Step 4: Evaluating \( k(n) \) for \( n = 3, 4, 5, 6 \)}
+
+\subsection*{For \( n = 3 \) (Triangle)}
+The circumradius \( R \) is:
+\[
+R = \frac{1}{2 \sin(\pi/3)} = \frac{1}{2 \cdot \frac{\sqrt{3}}{2}} = \frac{1}{\sqrt{3}}
+\]
+Thus, \( GA = R = \frac{1}{\sqrt{3}} \). Therefore, we compute \( k(3) \):
+\[
+k(3) = \sqrt{1^2 + \left(\frac{1}{\sqrt{3}}\right)^2} = \sqrt{1 + \frac{1}{3}} = \sqrt{\frac{4}{3}} = \frac{2}{\sqrt{3}}.
+\]
+
+\subsection*{For \( n = 4 \) (Square)}
+The circumradius \( R \) is:
+\[
+R = \frac{1}{2 \sin(\pi/4)} = \frac{1}{2 \cdot \frac{\sqrt{2}}{2}} = \frac{1}{\sqrt{2}}.
+\]
+Thus, \( GA = R = \frac{1}{\sqrt{2}} \). Therefore, we compute \( k(4) \):
+\[
+k(4) = \sqrt{1^2 + \left(\frac{1}{\sqrt{2}}\right)^2} = \sqrt{1 + \frac{1}{2}} = \sqrt{\frac{3}{2}} = \frac{\sqrt{3}}{\sqrt{2}}.
+\]
+
+\subsection*{For \( n = 5 \) (Pentagon)}
+The circumradius \( R \) is:
+\[
+R = \frac{1}{2 \sin(\pi/5)}.
+\]
+Since \( \sin(\pi/5) \approx 0.5878 \), we compute:
+\[
+R \approx \frac{1}{2 \cdot 0.5878} \approx \frac{1}{1.1756} \approx 0.849.
+\]
+Thus, \( GA \approx 0.849 \). Therefore, we compute \( k(5) \):
+\[
+k(5) = \sqrt{1 + (0.849)^2} \approx \sqrt{1 + 0.720} \approx \sqrt{1.720} \approx \sqrt{2}.
+\]
+
+\subsection*{For \( n = 6 \) (Hexagon)}
+The circumradius \( R \) is:
+\[
+R = \frac{1}{2 \sin(\pi/6)} = \frac{1}{2 \cdot \frac{1}{2}} = 1.
+\]
+Thus, \( GA = 1 \). Therefore, we compute \( k(6) \):
+\[
+k(6) = \sqrt{1^2 + 1^2} = \sqrt{1 + 1} = \sqrt{2}.
+\]
+
+\section*{Summary of Results}
+
+The correct values for \( k(n) \) are as follows:
+\begin{itemize}
+    \item \( k(3) = \frac{2}{\sqrt{3}} \) (Correct)
+    \item \( k(4) = \frac{\sqrt{3}}{\sqrt{2}} \) (Correct)
+    \item \( k(5) = \sqrt{2} \) (Incorrect as noted)
+    \item \( k(6) = 1 \) (Incorrect, should be \( \sqrt{2} \))
+\end{itemize}
+
+Thus, the correct statements from the original problem are:
+\begin{itemize}
+    \item a) No
+    \item b) No
+    \item c) Yes
+    \item d) Yes
+\end{itemize}
+
+\end{document}
