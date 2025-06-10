@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\textbf{System of equations}
+
+For any real numbers \( x, y, z \) satisfying the system of equations:
+\[
+\begin{aligned}
+1. & \quad x + y + z = 3, \\
+2. & \quad 2x + 3y + 4z = 9, \\
+3. & \quad 3x + y - z = 3,
+\end{aligned}
+\]
+does the following hold true?
+\begin{itemize}
+    \item a) \( x = z \) (Yes/No)
+    \item b) \( y = 1 \) (Yes/No)
+    \item c) \( x = 1 \) (Yes/No)
+    \item d) \( y = z \) (Yes/No)
+\end{itemize}
+
+\textbf{Step 1: Solve the system of equations}
+
+First, we express \( z \) in terms of \( x \) and \( y \) using the first equation:
+\[
+z = 3 - x - y
+\]
+
+\textbf{Step 2: Substitute \( z \) into the other equations}
+
+Substituting \( z \) into the second equation:
+\[
+2x + 3y + 4(3 - x - y) = 9
+\]
+Expanding:
+\[
+2x + 3y + 12 - 4x - 4y = 9
+\]
+Combining like terms:
+\[
+-2x - y + 12 = 9
+\]
+Rearranging:
+\[
+-2x - y = -3 \quad \Rightarrow \quad 2x + y = 3 \quad \text{(Equation 4)}
+\]
+
+Substituting \( z \) into the third equation:
+\[
+3x + y - (3 - x - y) = 3
+\]
+Expanding:
+\[
+3x + y - 3 + x + y = 3
+\]
+Combining like terms:
+\[
+4x + 2y - 3 = 3
+\]
+Rearranging:
+\[
+4x + 2y = 6 \quad \Rightarrow \quad 2x + y = 3 \quad \text{(Equation 5)}
+\]
+
+\textbf{Step 3: Analyze the relationships}
+
+Both Equation 4 and Equation 5 are identical:
+\[
+2x + y = 3
+\]
+Thus, we can express \( y \) in terms of \( x \):
+\[
+y = 3 - 2x
+\]
+
+\textbf{Step 4: Substitute \( y \) back into the equation for \( z \)}
+
+Substituting \( y \) back into the expression for \( z \):
+\[
+z = 3 - x - (3 - 2x) = 3 - x - 3 + 2x = x
+\]
+
+\textbf{Step 5: Summary of relationships}
+
+From the derived equations, we have:
+\[
+y = 3 - 2x \quad \text{and} \quad z = x
+\]
+
+\textbf{Step 6: Evaluate the given options}
+
+\begin{itemize}
+    \item a) \( x = z \): \textbf{Yes} (since \( z = x \)).
+    
+    \item b) \( y = 1 \): To check:
+    \[
+    3 - 2x = 1 \quad \Rightarrow \quad 2x = 2 \quad \Rightarrow \quad x = 1 \quad \Rightarrow \quad y = 1 \text{ (This is true when } x = 1\text{)}
+    \]
+    However, \( y \) is not necessarily always equal to 1 for all values of \( x \). Thus, the statement is \textbf{No}.
+    
+    \item c) \( x = 1 \): This is not always true; \( x \) can take various values. Thus, the statement is \textbf{No}.
+    
+    \item d) \( y = z \): To check:
+    \[
+    3 - 2x = x \quad \Rightarrow \quad 3 = 3x \quad \Rightarrow \quad x = 1 \quad \Rightarrow \quad y = 1 \text{ and } z = 1 \text{ (This is true when } x = 1\text{)}
+    \]
+    However, this is not true for all \( x \). Thus, the statement is \textbf{No}.
+\end{itemize}
+
+\end{document}
