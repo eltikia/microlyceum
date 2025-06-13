@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Determining Rationality of Given Numbers}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem}
+Is the number rational for each of the following cases?
+
+\begin{itemize}
+    \item a) \( \sqrt{(\sqrt{3} - 2)^2 - \sqrt{3}} \)
+    \item b) \( \sqrt{(1 - \sqrt{2})^2} + \sqrt{2} \)
+    \item c) \( \sqrt{(2 - \sqrt{3})^2} + \sqrt{3} \)
+    \item d) \( \sqrt{(\sqrt{2} - 1)^2} - \sqrt{2} \)
+\end{itemize}
+
+\section*{Solution}
+To determine whether the given numbers are rational, we need to check if they can be simplified to a form that is a rational number (i.e., a number that can be expressed as a ratio of two integers).
+
+\subsection*{a) \( \sqrt{(\sqrt{3} - 2)^2 - \sqrt{3}} \)}
+
+1. First, calculate \( (\sqrt{3} - 2)^2 \):
+   \[
+   (\sqrt{3} - 2)^2 = 3 - 4\sqrt{3} + 4 = 7 - 4\sqrt{3}
+   \]
+
+2. Now subtract \( \sqrt{3} \):
+   \[
+   7 - 4\sqrt{3} - \sqrt{3} = 7 - 5\sqrt{3}
+   \]
+
+3. So we have:
+   \[
+   \sqrt{7 - 5\sqrt{3}}
+   \]
+   This number is irrational because \( 7 - 5\sqrt{3} \) is not a perfect square of a rational number.
+
+\subsection*{b) \( \sqrt{(1 - \sqrt{2})^2} + \sqrt{2} \)}
+
+1. Calculate \( (1 - \sqrt{2})^2 \):
+   \[
+   (1 - \sqrt{2})^2 = 1 - 2\sqrt{2} + 2 = 3 - 2\sqrt{2}
+   \]
+
+2. Note that \( \sqrt{(1 - \sqrt{2})^2} = |1 - \sqrt{2}| \). Since \( \sqrt{2} > 1 \), we have:
+   \[
+   |1 - \sqrt{2}| = \sqrt{2} - 1
+   \]
+
+3. Add \( \sqrt{2} \):
+   \[
+   (\sqrt{2} - 1) + \sqrt{2} = 2\sqrt{2} - 1
+   \]
+   This number is irrational because \( \sqrt{2} \) is irrational.
+
+\subsection*{c) \( \sqrt{(2 - \sqrt{3})^2} + \sqrt{3} \)}
+
+1. Calculate \( (2 - \sqrt{3})^2 \):
+   \[
+   (2 - \sqrt{3})^2 = 4 - 4\sqrt{3} + 3 = 7 - 4\sqrt{3}
+   \]
+
+2. We have:
+   \[
+   \sqrt{(2 - \sqrt{3})^2} = |2 - \sqrt{3}|
+   \]
+   Since \( 2 > \sqrt{3} \), we have:
+   \[
+   |2 - \sqrt{3}| = 2 - \sqrt{3}
+   \]
+
+3. Add \( \sqrt{3} \):
+   \[
+   (2 - \sqrt{3}) + \sqrt{3} = 2
+   \]
+   Since 2 is an integer, it is also a rational number.
+
+\subsection*{d) \( \sqrt{(\sqrt{2} - 1)^2} - \sqrt{2} \)}
+
+1. Calculate \( (\sqrt{2} - 1)^2 \):
+   \[
+   (\sqrt{2} - 1)^2 = 2 - 2\sqrt{2} + 1 = 3 - 2\sqrt{2}
+   \]
+
+2. We have:
+   \[
+   \sqrt{(\sqrt{2} - 1)^2} = |\sqrt{2} - 1|
+   \]
+   Since \( \sqrt{2} > 1 \), we have:
+   \[
+   |\sqrt{2} - 1| = \sqrt{2} - 1
+   \]
+
+3. Subtract \( \sqrt{2} \):
+   \[
+   (\sqrt{2} - 1) - \sqrt{2} = -1
+   \]
+   Since -1 is an integer, it is also a rational number.
+
+\end{document}
