@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{Inequality Logic}
+Real numbers \(x\) and \(y\) satisfy the inequalities:
+\[
+x^2 + y^2 \leq 50 \quad \text{and} \quad 2x + y \geq 15.
+\]
+Determine whether the following statements necessarily follow from these conditions:
+\begin{enumerate}
+    \item[(a)] \(x \leq 5\),
+    \item[(b)] \(x^2 + y^2 \geq 45\),
+    \item[(c)] \(x + y \leq 10\),
+    \item[(d)] \(y \leq 5\).
+\end{enumerate}
+
+\section*{Solution}
+
+\subsection*{Step 1: Analyzing the inequalities}
+\begin{enumerate}
+    \item \(x^2 + y^2 \leq 50\): This inequality defines a disk (or circle) of radius \(\sqrt{50}\) centered at the origin \((0, 0)\).
+    \item \(2x + y \geq 15\): This inequality represents a half-plane. The boundary line \(2x + y = 15\) has a slope of \(-2\) and intercept \(y = 15\) when \(x = 0\). The solution set is the intersection of the disk \(x^2 + y^2 \leq 50\) and the half-plane \(2x + y \geq 15\).
+\end{enumerate}
+
+\subsection*{Step 2: Checking each statement}
+
+\paragraph{(a) \(x \leq 5\):}
+
+The largest possible value of \(x\) occurs along the line \(2x + y = 15\) where it intersects the boundary of the circle \(x^2 + y^2 = 50\). Substituting \(y = 15 - 2x\) into the circle equation:
+\[
+x^2 + (15 - 2x)^2 = 50.
+\]
+Expanding:
+\[
+x^2 + 225 - 60x + 4x^2 = 50 \implies 5x^2 - 60x + 225 = 50.
+\]
+Simplify:
+\[
+5x^2 - 60x + 175 = 0 \implies x^2 - 12x + 35 = 0.
+\]
+Factoring:
+\[
+(x - 7)(x - 5) = 0.
+\]
+The solutions are \(x = 7\) and \(x = 5\). To determine if \(x = 7\) is valid, calculate \(y = 15 - 2(7) = 1\). Substituting \(x = 7, y = 1\) into the circle equation:
+\[
+x^2 + y^2 = 7^2 + 1^2 = 49 + 1 = 50,
+\]
+which satisfies both inequalities. Hence, \(x = 7\) is valid, and \(x \leq 5\) does not necessarily follow. \textbf{Answer: False.}
+
+\paragraph{(b) \(x^2 + y^2 \geq 45\):}
+
+The minimum value of \(x^2 + y^2\) occurs at the intersection of \(2x + y = 15\) and \(x^2 + y^2 = 50\). From the solution to (a), all valid points lie on the circle boundary, where \(x^2 + y^2 = 50\), which is always greater than or equal to \(45\). \textbf{Answer: True.}
+
+\paragraph{(c) \(x + y \leq 10\):}
+
+The maximum value of \(x + y\) occurs at the boundary points. From (a), the valid points are:
+\begin{itemize}
+    \item At \(x = 5, y = 5\): \(x + y = 5 + 5 = 10\),
+    \item At \(x = 7, y = 1\): \(x + y = 7 + 1 = 8\).
+\end{itemize}
+The maximum \(x + y = 10\), so \(x + y \leq 10\) holds for all points in the region. \textbf{Answer: True.}
+
+\paragraph{(d) \(y \leq 5\):}
+
+The maximum value of \(y\) occurs along the line \(2x + y = 15\). At \(x = 5\), \(y = 15 - 2(5) = 5\). Since no point in the solution region has \(y > 5\), the statement \(y \leq 5\) is valid. \textbf{Answer: True.}
+
+\end{document}
