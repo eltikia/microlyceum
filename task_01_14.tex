@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{Triangle Analysis in Square $ABCD$}
+
+Given a square $ABCD$ with points $E$ and $F$ being the midpoints of sides $AD$ and $CD$ respectively, and point $G$ being the intersection of segments $CE$ and $BF$, we will analyze the properties of triangles $CDG$, $ADG$, $ABG$, and $BCG$.
+
+\subsection*{Step-by-Step Analysis}
+
+\subsubsection*{1. Coordinates Assignment}
+Let the vertices of square $ABCD$ be:
+\[
+A(0, 1), \quad B(1, 1), \quad C(1, 0), \quad D(0, 0)
+\]
+The midpoints $E$ and $F$ are calculated as follows:
+\[
+E\, \text{(midpoint of $AD$)}: \quad E\left( \frac{0 + 0}{2}, \frac{1 + 0}{2} \right) = E(0, 0.5)
+\]
+\[
+F\, \text{(midpoint of $CD$)}: \quad F\left( \frac{1 + 0}{2}, \frac{0 + 0}{2} \right) = F(0.5, 0)
+\]
+
+\subsubsection*{2. Finding the Intersection Point $G$}
+The line segment $CE$ can be determined using the coordinates of $C$ and $E$:
+\[
+\text{Slope from $C(1, 0)$ to $E(0, 0.5)$}: \quad \text{slope} = \frac{0.5 - 0}{0 - 1} = -0.5
+\]
+Using point-slope form, the equation of line $CE$ is:
+\[
+y - 0 = -0.5(x - 1) \implies y = -0.5x + 0.5
+\]
+
+For segment $BF$ from $B(1, 1)$ to $F(0.5, 0)$:
+\[
+\text{Slope}: \quad \frac{0 - 1}{0.5 - 1} = 2
+\]
+Its equation is:
+\[
+y - 1 = 2(x - 1) \implies y = 2x - 1
+\]
+
+To find $G$, solve the equations:
+\[
+-0.5x + 0.5 = 2x - 1
+\]
+\[
+2.5x = 1.5 \implies x = 0.6
+\]
+Substituting $x$ back to find $y$:
+\[
+y = 2(0.6) - 1 = 0.2
+\]
+Thus, $G(0.6, 0.2)$.
+
+\subsection*{Analyzing the Triangles}
+
+\paragraph{a) Triangle $CDG$ is Isosceles}
+The lengths $CD$, $CG$, and $DG$ need to be compared.
+\[
+CD = 1, \quad CG = \sqrt{(1 - 0.6)^2 + (0 - 0.2)^2} = \sqrt{0.16 + 0.04} = \sqrt{0.2}, \quad DG = \sqrt{(0 - 0.6)^2 + (0 - 0.2)^2} = \sqrt{0.36 + 0.04} = \sqrt{0.4}
+\]
+Since $CG$ and $DG$ are not equal, triangle $CDG$ is not isosceles. \textbf{Answer: No.}
+
+\paragraph{b) Triangle $ADG$ is Right}
+Check if the slopes of $AD$ and $AG$ are negative reciprocals.
+\[
+\text{Slope of $AD$} = 0 \quad \text{(horizontal line)}, \quad \text{Slope of $AG$} = \frac{0.2 - 1}{0.6 - 0} = \frac{-0.8}{0.6} = -\frac{4}{3}
+\]
+Since they are not negative reciprocals, $ADG$ is not a right triangle. \textbf{Answer: No.}
+
+\paragraph{c) Triangle $ABG$ is Isosceles}
+Compare lengths $AB$, $AG$, and $BG$:
+\[
+AB = 1, \quad AG = \sqrt{(0.6 - 0)^2 + (0.2 - 1)^2} = \sqrt{0.36 + 0.64} = \sqrt{1} = 1, \quad BG = \sqrt{(0.6 - 1)^2 + (0.2 - 1)^2} = \sqrt{0.16 + 0.64} = \sqrt{0.8} \neq 1
+\]
+Since $AB = AG$, triangle $ABG$ is isosceles. \textbf{Answer: Yes.}
+
+\paragraph{d) Triangle $BCG$ is Right}
+Check slopes of $BC$ and $BG$:
+\[
+\text{Slope of $BC$} = \frac{0 - 1}{1 - 1} \quad \text{(undefined, vertical line)}
+\]
+\[
+\text{Slope of $BG$} = \frac{0.2 - 1}{0.6 - 1} = \frac{-0.8}{-0.4} = 2
+\]
+Since one slope is undefined (vertical line) and the other is defined, triangle $BCG$ is a right triangle. \textbf{Answer: Yes.}
+
+\subsection*{Summary of Results}
+\begin{itemize}
+    \item Triangle $CDG$ is isosceles: \textbf{No.}
+    \item Triangle $ADG$ is right: \textbf{No.}
+    \item Triangle $ABG$ is isosceles: \textbf{Yes.}
+    \item Triangle $BCG$ is right: \textbf{Yes.}
+\end{itemize}
+
+\end{document}
