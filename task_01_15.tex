@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Existence of Minima}
+
+Determine whether there exists a minimum value in the range (set of values) of the following functions defined on the set of real numbers:
+
+\begin{enumerate}
+    \item \( f(x) = 2^x + 2^{-x} \)
+    \item \( f(x) = \frac{1}{x^2 + 1} \)
+    \item \( f(x) = x^3 \)
+    \item \( f(x) = x^2 \)
+\end{enumerate}
+
+\section*{Solutions}
+
+\subsection*{a) \( f(x) = 2^x + 2^{-x} \)}
+
+\textbf{Analysis}:
+
+The function \( f(x) = 2^x + 2^{-x} \) is the sum of two exponential functions. To find its minimum value, we can use the properties of exponential functions.
+
+\textbf{Finding the Minimum}:
+
+To analyze the function, rewrite \( 2^{-x} \) as \( \frac{1}{2^x} \):
+\[
+f(x) = 2^x + \frac{1}{2^x}
+\]
+Let \( y = 2^x \). Since \( y > 0 \), the function can be expressed in terms of \( y \):
+\[
+f(y) = y + \frac{1}{y}
+\]
+To find the minimum value, take the derivative of \( f(y) \) with respect to \( y \) and set it to zero:
+\[
+f'(y) = 1 - \frac{1}{y^2}
+\]
+Setting \( f'(y) = 0 \):
+\[
+1 - \frac{1}{y^2} = 0 \implies y^2 = 1 \implies y = 1 \quad (y > 0)
+\]
+Now, evaluate \( f(y) \) at this critical point:
+\[
+f(1) = 1 + 1 = 2
+\]
+
+\textbf{Conclusion}: The minimum value of \( f(x) \) is 2, and therefore, there exists a minimum value in the range of the function.
+
+\subsection*{b) \( f(x) = \frac{1}{x^2 + 1} \)}
+
+\textbf{Analysis}:
+
+The function \( f(x) = \frac{1}{x^2 + 1} \) is defined for all real numbers \( x \). The denominator \( x^2 + 1 \) is always positive and achieves its minimum value of 1 when \( x = 0 \).
+
+\textbf{Finding the Minimum}:
+
+The maximum value of \( f(x) \) occurs at \( x = 0 \):
+\[
+f(0) = \frac{1}{0^2 + 1} = 1
+\]
+As \( |x| \) increases, \( x^2 + 1 \) increases, leading to a decrease in \( f(x) \):
+\[
+\lim_{x \to \pm\infty} f(x) = \lim_{x \to \pm\infty} \frac{1}{x^2 + 1} = 0
+\]
+However, \( f(x) \) never actually reaches 0; it only approaches it.
+
+\textbf{Conclusion}: Therefore, there is no minimum value (infimum) in the range of the function \( f(x) \) because while it can get arbitrarily close to 0, it never actually reaches it.
+
+\subsection*{c) \( f(x) = x^3 \)}
+
+\textbf{Analysis}:
+
+The function \( f(x) = x^3 \) is a cubic polynomial. It is defined for all real \( x \).
+
+\textbf{Finding the Minimum}:
+
+As \( x \) approaches negative infinity, \( f(x) \) also approaches negative infinity:
+\[
+\lim_{x \to -\infty} f(x) = -\infty
+\]
+As \( x \) approaches positive infinity, \( f(x) \) approaches positive infinity:
+\[
+\lim_{x \to \infty} f(x) = \infty
+\]
+Since the function can take any real value, there is no minimum value in the range.
+
+\textbf{Conclusion}: There is no minimum value in the range of the function \( f(x) \).
+
+\subsection*{d) \( f(x) = x^2 \)}
+
+\textbf{Analysis}:
+
+The function \( f(x) = x^2 \) is a quadratic polynomial. It is defined for all real \( x \) and is always non-negative.
+
+\textbf{Finding the Minimum}:
+
+The minimum value occurs at \( x = 0 \):
+\[
+f(0) = 0^2 = 0
+\]
+As \( |x| \) increases, \( f(x) \) also increases:
+\[
+\lim_{x \to \pm\infty} f(x) = \infty
+\]
+
+\textbf{Conclusion}: The minimum value of \( f(x) \) is 0, and therefore, there exists a minimum value in the range of the function.
+
+\section*{Summary of Results}
+
+\begin{enumerate}
+    \item \( f(x) = 2^x + 2^{-x} \): Exists minimum value, \( \mathbf{2} \)
+    \item \( f(x) = \frac{1}{x^2 + 1} \): Does not exist minimum value
+    \item \( f(x) = x^3 \): Does not exist minimum value
+    \item \( f(x) = x^2 \): Exists minimum value, \( \mathbf{0} \)
+\end{enumerate}
+
+\end{document}
