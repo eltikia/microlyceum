@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+\section*{Trigonometry in Arithmetic Sequences}
+Determine whether the following three numbers form an arithmetic sequence in the given order:
+
+\begin{enumerate}
+    \item $\cos^2 34^\circ, \cos^2 45^\circ, \cos^2 56^\circ$;
+    \item $\sin 10^\circ, \sin 30^\circ, \sin 50^\circ$;
+    \item $\tan 150^\circ, \tan 30^\circ, \tan 60^\circ$;
+    \item $\cos 0^\circ, \cos 60^\circ, \cos 90^\circ$.
+\end{enumerate}
+
+\section*{Solution}
+An arithmetic sequence is defined by the condition that the difference between consecutive terms remains constant. That is, for three numbers $a, b, c$, they form an arithmetic sequence if and only if:
+\[
+2b = a + c.
+\]
+We check this condition for each case.
+
+\subsection*{(a) Checking $\cos^2 34^\circ, \cos^2 45^\circ, \cos^2 56^\circ$}
+We verify whether:
+\[
+2 \cos^2 45^\circ = \cos^2 34^\circ + \cos^2 56^\circ.
+\]
+Since:
+\[
+\cos 45^\circ = \frac{\sqrt{2}}{2}, \quad \cos^2 45^\circ = \frac{1}{2},
+\]
+and using trigonometric identities,
+\[
+\cos 34^\circ = \sin 56^\circ, \quad \cos 56^\circ = \sin 34^\circ,
+\]
+we find that the equation holds. Thus, these numbers \textbf{form} an arithmetic sequence.
+
+\subsection*{(b) Checking $\sin 10^\circ, \sin 30^\circ, \sin 50^\circ$}
+We verify whether:
+\[
+2 \sin 30^\circ = \sin 10^\circ + \sin 50^\circ.
+\]
+Since:
+\[
+\sin 30^\circ = \frac{1}{2},
+\]
+and using the sum-to-product identity:
+\[
+\sin A + \sin B = 2 \sin \left( \frac{A+B}{2} \right) \cos \left( \frac{A-B}{2} \right),
+\]
+for $A = 50^\circ$ and $B = 10^\circ$,
+\[
+\sin 50^\circ + \sin 10^\circ = 2 \sin 30^\circ \cos 20^\circ = 2 \times \frac{1}{2} \times \cos 20^\circ = \cos 20^\circ.
+\]
+Since $\cos 20^\circ \neq 1$, the equality does not hold, meaning these numbers \textbf{do not form} an arithmetic sequence.
+
+\subsection*{(c) Checking $\tan 150^\circ, \tan 30^\circ, \tan 60^\circ$}
+We verify whether:
+\[
+2 \tan 30^\circ = \tan 150^\circ + \tan 60^\circ.
+\]
+Since:
+\[
+\tan 30^\circ = \frac{1}{\sqrt{3}}, \quad \tan 60^\circ = \sqrt{3}, \quad \tan 150^\circ = -\frac{1}{\sqrt{3}},
+\]
+we check:
+\[
+2 \times \frac{1}{\sqrt{3}} = -\frac{1}{\sqrt{3}} + \sqrt{3}.
+\]
+This simplifies to:
+\[
+\frac{2}{\sqrt{3}} = \sqrt{3} - \frac{1}{\sqrt{3}} = \frac{3}{\sqrt{3}} - \frac{1}{\sqrt{3}} = \frac{2}{\sqrt{3}},
+\]
+which is true. Thus, these numbers \textbf{form} an arithmetic sequence.
+
+\subsection*{(d) Checking $\cos 0^\circ, \cos 60^\circ, \cos 90^\circ$}
+We verify whether:
+\[
+2 \cos 60^\circ = \cos 0^\circ + \cos 90^\circ.
+\]
+Since:
+\[
+\cos 0^\circ = 1, \quad \cos 60^\circ = \frac{1}{2}, \quad \cos 90^\circ = 0,
+\]
+we check:
+\[
+2 \times \frac{1}{2} = 1 + 0.
+\]
+This simplifies to:
+\[
+1 = 1,
+\]
+which is true. Thus, these numbers \textbf{form} an arithmetic sequence.
+
+\section*{Final Answer}
+\begin{enumerate}
+    \item Yes
+    \item No
+    \item Yes
+    \item Yes
+\end{enumerate}
+
+\end{document}
+
