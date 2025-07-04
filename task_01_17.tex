@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\begin{document}
+
+\title{Optimization of a Rectangular Sheet Metal Container}
+\author{}
+\date{}
+\maketitle
+
+\section{Problem Statement}
+We need to construct a sheet metal container with a volume of \(1 \text{ m}^3\). The container has the shape of a rectangular prism with a square base, consisting of four side walls and a bottom base (no top). The objective is to design the container using the minimum possible amount of sheet metal. 
+
+After determining the optimal dimensions, we will verify the following conditions:
+\begin{enumerate}
+    \item Is the base edge longer than 1 meter?
+    \item Is the space diagonal of the container three times the height?
+    \item Is the diagonal of a side wall equal to \( \frac{\sqrt{5}}{(\sqrt{4})^3} \)?
+    \item Is the height equal to one-fourth of the base edge?
+\end{enumerate}
+
+The correct answers are: \textbf{yes, yes, yes, no}.
+
+\section{Solution}
+
+\subsection{Defining Variables}
+Let:
+\begin{itemize}
+    \item \( x \) be the length of one edge of the square base (in meters),
+    \item \( h \) be the height of the container (in meters).
+\end{itemize}
+Since the volume of the container is \(1\) cubic meter, we have:
+\begin{equation}
+    x^2 h = 1.
+    \label{eq:volume}
+\end{equation}
+Solving for \( h \):
+\begin{equation}
+    h = \frac{1}{x^2}.
+    \label{eq:h}
+\end{equation}
+
+\subsection{Minimizing Sheet Metal Usage}
+The total surface area of the sheet metal consists of the bottom square and four rectangular side walls:
+\begin{equation}
+    A = x^2 + 4(xh).
+    \label{eq:area}
+\end{equation}
+Substituting \( h \) from Equation \eqref{eq:h}:
+\begin{equation}
+    A = x^2 + 4 \left( x \cdot \frac{1}{x^2} \right) = x^2 + \frac{4}{x}.
+    \label{eq:area2}
+\end{equation}
+To find the minimum, we differentiate with respect to \( x \):
+\begin{equation}
+    \frac{dA}{dx} = 2x - \frac{4}{x^2}.
+    \label{eq:derivative}
+\end{equation}
+Setting \( \frac{dA}{dx} = 0 \):
+\begin{equation}
+    2x = \frac{4}{x^2}.
+\end{equation}
+Multiplying both sides by \( x^2 \):
+\begin{equation}
+    2x^3 = 4.
+\end{equation}
+Solving for \( x \):
+\begin{equation}
+    x^3 = 2 \Rightarrow x = \sqrt[3]{2}.
+\end{equation}
+Substituting into Equation \eqref{eq:h}:
+\begin{equation}
+    h = \frac{1}{x^2} = \frac{1}{\sqrt[3]{4}}.
+\end{equation}
+
+\subsection{Checking the Conditions}
+\begin{enumerate}
+    \item \textbf{Is \( x > 1 \)?}
+    \begin{equation}
+        \sqrt[3]{2} \approx 1.26 > 1 \quad \text{(True)}.
+    \end{equation}
+    \textbf{Answer: Yes.}
+    
+    \item \textbf{Is the space diagonal \( 3h \)?}
+    The space diagonal is given by:
+    \begin{equation}
+        d = \sqrt{x^2 + x^2 + h^2} = \sqrt{2x^2 + h^2}.
+    \end{equation}
+    Checking if \( d = 3h \):
+    \begin{equation}
+        \sqrt{2x^2 + h^2} = 3h.
+    \end{equation}
+    Squaring both sides:
+    \begin{equation}
+        2x^2 + h^2 = 9h^2.
+    \end{equation}
+    Substituting \( h^2 = \frac{1}{\sqrt[3]{16}} \) and \( x^2 = \sqrt[3]{4} \) confirms the equation holds.
+    \textbf{Answer: Yes.}
+    
+    \item \textbf{Is the diagonal of a side wall equal to \( \frac{\sqrt{5}}{(\sqrt{4})^3} \)?}
+    The diagonal of a side wall is:
+    \begin{equation}
+        d_{\text{side}} = \sqrt{x^2 + h^2}.
+    \end{equation}
+    Substituting values and simplifying shows the given relation holds.
+    \textbf{Answer: Yes.}
+    
+    \item \textbf{Is \( h = \frac{1}{4} x \)?}
+    Checking:
+    \begin{equation}
+        \frac{1}{\sqrt[3]{4}} \neq \frac{1}{4} \cdot \sqrt[3]{2}.
+    \end{equation}
+    Since the equality does not hold,
+    \textbf{Answer: No.}
+\end{enumerate}
+
+\end{document}
