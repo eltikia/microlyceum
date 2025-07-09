@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Conditions for Prime Numbers}
+\author{}
+\date{}
+\maketitle
+
+We investigate whether for any integer \( p > 1 \), the number \( p \) is prime if and only if the following conditions hold:
+
+\begin{itemize}
+    \item[(a)] \( p \) is not divisible by any integer \( k \) such that \( 1 < k < \sqrt{p} \).
+    \item[(b)] \( p \) is not divisible by any integer \( k \) such that \( 1 < k \leq \frac{p}{2} \).
+    \item[(c)] \( p \) is not divisible by any integer \( k \) such that \( 1 < k \leq p \).
+    \item[(d)] \( p \) is not divisible by any odd integer \( k \) such that \( 1 < k < p \).
+\end{itemize}
+
+We now analyze each of these conditions.
+
+\section*{Condition (a): No divisibility by \( 1 < k < \sqrt{p} \)}
+
+A prime number is defined as having no divisors other than 1 and itself. If \( p \) is composite, then it can be expressed as \( p = k \cdot m \), where \( k \) and \( m \) are proper divisors of \( p \).
+
+If both \( k \) and \( m \) were greater than \( \sqrt{p} \), then their product would exceed \( p \), which is a contradiction. Thus, at least one of the divisors must be \( \leq \sqrt{p} \).
+
+However, this condition alone is not sufficient to determine primality. For instance, the number 9 satisfies this condition but is not prime. Hence, condition (a) is incorrect.
+
+\section*{Condition (b): No divisibility by \( 1 < k \leq \frac{p}{2} \)}
+
+If \( p \) is composite, then it has a divisor \( k \) with \( 1 < k \leq \frac{p}{2} \). If such a divisor exists, there is some \( m > 1 \) with \( p = k \cdot m \). Since \( k \leq \frac{p}{2} \), it follows that \( m \geq 2 \), meaning \( k \) is a proper divisor of \( p \).
+
+If \( p \) is prime, it has no proper divisors other than itself and 1, meaning no \( k \) in the range \( 1 < k \leq \frac{p}{2} \) can divide \( p \). Therefore, condition (b) is correct.
+
+\section*{Condition (c): No divisibility by \( 1 < k \leq p \)}
+
+This condition would imply that \( p \) is not divisible by any integer \( k \) in the range \( 1 < k \leq p \). However, every number is divisible by itself, making this condition incorrect. Thus, condition (c) is false.
+
+\section*{Condition (d): No divisibility by odd numbers \( 1 < k < p \)}
+
+This condition suggests that \( p \) is prime if it is not divisible by any odd number \( k \) in the range \( 1 < k < p \). This is incorrect because it fails to account for even composite numbers like \( p = 4 \), which is only divisible by 2 (an even number). Thus, condition (d) is incorrect.
+
+\end{document}
