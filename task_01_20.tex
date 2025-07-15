@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphicx}
+
+\begin{document}
+
+\title{Analysis of Function Transformations}
+\author{}
+\date{}
+\maketitle
+
+\section{Introduction}
+Given the function $f(x)$ depicted in Figure 4, we analyze and derive the transformations leading to the graphs shown in Figures 5 through 8. Each transformation is considered in detail with its analytical properties and effects on the function.
+
+\section{Absolute Value Transformation: $f_1(x) = |f(x)|$}
+The function $f_1(x) = |f(x)|$ modifies the original function such that all negative values of $f(x)$ are reflected above the $x$-axis. Mathematically, we define:
+\[
+f_1(x) = \begin{cases} 
+    f(x), & \text{if } f(x) \geq 0, \\
+    -f(x), & \text{if } f(x) < 0.
+\end{cases}
+\]
+This operation does not alter the domain of the function but ensures that all function values remain non-negative. The points where $f(x) = 0$ remain unchanged.\newline
+\textbf{Correct Answer: Yes}
+
+\section{Reflection Across the x-axis: $f_2(x) = -f(x)$}
+The transformation $f_2(x) = -f(x)$ reflects the graph of $f(x)$ across the $x$-axis. This operation affects all function values by negating them:
+\[
+f_2(x) = -f(x) \quad \forall x.
+\]
+Zeros of the function remain unchanged, while positive values become negative and vice versa.\newline
+\textbf{Correct Answer: Yes}
+
+\section{Even Function Extension: $f_3(x) = f(|x|)$}
+Applying $f_3(x) = f(|x|)$ modifies the function by making it symmetric with respect to the $y$-axis. Mathematically,
+\[
+f_3(x) = \begin{cases} 
+    f(x), & \text{if } x \geq 0, \\
+    f(-x), & \text{if } x < 0.
+\end{cases}
+\]
+This operation preserves function values for $x \geq 0$ but mirrors them into the negative $x$ region. However, based on the given figures, this transformation does not match the expected graph.\newline
+\textbf{Correct Answer: No}
+
+\section{Reflection Across the y-axis: $f_4(x) = f(-x)$}
+The transformation $f_4(x) = f(-x)$ reflects the graph across the $y$-axis, which means:
+\[
+f_4(x) = f(-x) \quad \forall x.
+\]
+This preserves function values symmetrically but swaps left and right sides.\newline
+\textbf{Correct Answer: Yes}
+
+\section{Conclusion}
+Each of these transformations provides a fundamental way to manipulate functions, preserving key properties such as symmetry, zeros, and behavior under reflection. Understanding these modifications is essential in various applications of mathematical analysis and function modeling.
+
+\end{document}
