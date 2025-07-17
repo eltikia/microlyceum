@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Analysis of the Convergence of Sequences}
+\author{}
+\date{}
+\maketitle
+
+\section*{Task and Solution}
+
+We are tasked with answering whether the sequence \( (a_n) \) defined by the following formulas converges to a finite limit.
+
+Answer with "yes" or "no" for each case, and provide detailed explanations of the solutions.
+
+\begin{enumerate}
+    \item \( a_n = \log_2(n) \)
+    \item \( a_n = 2^{-n} \)
+    \item \( a_n = \frac{2n^2 + 3n^3 + 4}{n^2 + 1} \)
+    \item \( a_n = \log_{n+1}(3) \)
+\end{enumerate}
+
+For each sequence, we will rigorously analyze its behavior as \( n \to \infty \) using exact calculations and formulas.
+
+\section*{Solution}
+
+\subsection*{1. Sequence \( a_n = \log_2(n) \)}
+
+We are given the sequence \( a_n = \log_2(n) \). The logarithmic function \( \log_2(n) \) increases without bound as \( n \) increases. Specifically:
+
+\[
+a_n = \log_2(n) = \frac{\ln(n)}{\ln(2)}
+\]
+
+As \( n \to \infty \), the natural logarithm \( \ln(n) \to \infty \), so:
+
+\[
+\lim_{n \to \infty} \log_2(n) = \infty
+\]
+
+Thus, the sequence \( a_n = \log_2(n) \) does not converge to a finite limit.
+
+\textbf{Answer: No}
+
+\subsection*{2. Sequence \( a_n = 2^{-n} \)}
+
+Now, consider the sequence \( a_n = 2^{-n} \). This sequence is an exponential decay. We can express it as:
+
+\[
+a_n = 2^{-n} = \frac{1}{2^n}
+\]
+
+As \( n \to \infty \), the term \( 2^n \) grows exponentially, so:
+
+\[
+\lim_{n \to \infty} 2^{-n} = 0
+\]
+
+Therefore, the sequence \( a_n = 2^{-n} \) converges to 0.
+
+\textbf{Answer: Yes}
+
+\subsection*{3. Sequence \( a_n = \frac{2n^2 + 3n^3 + 4}{n^2 + 1} \)}
+
+Next, we consider the sequence \( a_n = \frac{2n^2 + 3n^3 + 4}{n^2 + 1} \). We begin by dividing both the numerator and denominator by \( n^2 \):
+
+\[
+a_n = \frac{2n^2 + 3n^3 + 4}{n^2 + 1} = \frac{n^2(2 + 3n + \frac{4}{n^2})}{n^2(1 + \frac{1}{n^2})}
+\]
+
+This simplifies to:
+
+\[
+a_n = \frac{2 + 3n + \frac{4}{n^2}}{1 + \frac{1}{n^2}}
+\]
+
+As \( n \to \infty \), the terms \( \frac{4}{n^2} \) and \( \frac{1}{n^2} \) approach 0, leaving us with:
+
+\[
+\lim_{n \to \infty} a_n = 3n + 2
+\]
+
+Thus, the sequence grows without bound, and it does not converge to a finite limit.
+
+\textbf{Answer: No}
+
+\subsection*{4. Sequence \( a_n = \log_{n+1}(3) \)}
+
+Finally, we analyze the sequence \( a_n = \log_{n+1}(3) \). Using the change of base formula for logarithms:
+
+\[
+a_n = \log_{n+1}(3) = \frac{\ln(3)}{\ln(n+1)}
+\]
+
+As \( n \to \infty \), \( \ln(n+1) \) grows indefinitely, so:
+
+\[
+\lim_{n \to \infty} \frac{\ln(3)}{\ln(n+1)} = 0
+\]
+
+Thus, the sequence \( a_n = \log_{n+1}(3) \) converges to 0.
+
+\textbf{Answer: Yes}
+
+\end{document}
