@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{Probability Analysis of Rabbit Colors in a Hat}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+In a hat, there are 10 rabbits, each of which is either white, green, or pink. It is known that if we draw a random rabbit from the hat, then put it back, shuffle, and draw again, the probability that the two drawn rabbits are of the same color is no greater than 0.35. We need to determine the validity of the following statements:
+
+\begin{itemize}
+    \item[a)] It is possible that there are 5 pink rabbits in the hat.
+    \item[b)] There are at least 3 white rabbits in the hat.
+    \item[c)] It is possible that there are 4 white rabbits and 4 pink rabbits in the hat.
+    \item[d)] There are at most 4 green rabbits in the hat.
+\end{itemize}
+
+\section{Probability Calculation}
+Let \( w \), \( g \), and \( p \) represent the number of white, green, and pink rabbits respectively. We have the following constraints:
+\[
+w + g + p = 10
+\]
+
+The probability of drawing two rabbits of the same color can be calculated as follows:
+\[
+P(\text{same color}) = \frac{w(w-1) + g(g-1) + p(p-1)}{10 \cdot 9}
+\]
+This probability must satisfy the condition:
+\[
+\frac{w(w-1) + g(g-1) + p(p-1)}{90} \leq 0.35
+\]
+which simplifies to:
+\[
+w(w-1) + g(g-1) + p(p-1) \leq 31.5
+\]
+
+Since the number of rabbits must be an integer, we consider \( w(w-1) + g(g-1) + p(p-1) \leq 31 \).
+
+\subsection{Analysis of Each Statement}
+\subsubsection{Statement a}
+\textbf{Is it possible that there are 5 pink rabbits in the hat?}
+
+If \( p = 5 \), then \( w + g = 10 - 5 = 5 \). The maximum value for \( w(w-1) + g(g-1) \) occurs when \( w \) and \( g \) are maximally unequal (either 0 or 5).
+
+Calculating for \( w = 5 \) and \( g = 0 \):
+\[
+w(w-1) + g(g-1) + p(p-1) = 5(4) + 0(0) + 5(4) = 20 + 0 + 20 = 40
+\]
+This exceeds 31, thus making this configuration impossible.
+
+\textbf{Answer: No}
+
+\subsubsection{Statement b}
+\textbf{Are there at least 3 white rabbits in the hat?}
+
+Assuming \( w \geq 3 \), we can check the minimum values for \( g \) and \( p \).
+
+Let \( w = 3 \):
+\[
+g + p = 10 - 3 = 7
+\]
+Calculating the maximum value \( g = 4 \) and \( p = 3 \):
+\[
+w(w-1) + g(g-1) + p(p-1) = 3(2) + 4(3) + 3(2) = 6 + 12 + 6 = 24
+\]
+This satisfies \( 24 \leq 31 \).
+
+Thus, it is possible to have at least 3 white rabbits.
+
+\textbf{Answer: Yes}
+
+\subsubsection{Statement c}
+\textbf{Is it possible that there are 4 white rabbits and 4 pink rabbits in the hat?}
+
+In this case, we have:
+\[
+w = 4, \quad p = 4, \quad g = 10 - (4 + 4) = 2
+\]
+Calculating:
+\[
+w(w-1) + g(g-1) + p(p-1) = 4(3) + 2(1) + 4(3) = 12 + 2 + 12 = 26
+\]
+This satisfies \( 26 \leq 31 \).
+
+Thus, this configuration is possible.
+
+\textbf{Answer: No}
+
+\subsubsection{Statement d}
+\textbf{Are there at most 4 green rabbits in the hat?}
+
+Let’s assume \( g = 4 \), then:
+\[
+w + p = 10 - 4 = 6
+\]
+The distribution can be \( w = 3 \) and \( p = 3 \):
+\[
+w(w-1) + g(g-1) + p(p-1) = 3(2) + 4(3) + 3(2) = 6 + 12 + 6 = 24
+\]
+This satisfies \( 24 \leq 31 \).
+
+If we try \( g = 5 \) (which exceeds the limit) and distribute the rest, we find that it leads to violations of the probability condition.
+
+Thus, the statement holds true as configurations with \( g \leq 4 \) are indeed valid.
+
+\textbf{Answer: Yes}
+
+\end{document}
