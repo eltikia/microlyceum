@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Chess Games Among Ten Players}
+\author{}
+\date{}
+\maketitle
+
+\section*{Problem Statement}
+Ten gentlemen spent an evening in a club playing chess. It is known that there are no players A and B such that A played more than one game against B, nor are there any three players A, B, and C such that A played games against both B and C, while B and C played against each other. Based on this information, answer the following questions with Yes or No:
+\begin{enumerate}
+    \item[a)] There were certainly fewer than 31 games played.
+    \item[b)] There were certainly fewer than 20 games played.
+    \item[c)] It could have happened that exactly 25 games were played.
+    \item[d)] There were certainly fewer than 35 games played.
+\end{enumerate}
+
+\section*{Solution}
+
+To analyze the situation, let us denote the players as \( P_1, P_2, \ldots, P_{10} \). The conditions imply the following:
+
+1. No two players can play more than one game against each other.
+2. No player can play against two others who have played against each other.
+
+This scenario can be interpreted using graph theory, where:
+
+
+    Each player represents a vertex.
+
+    Each game played between two players represents an edge.
+
+The graph formed under these conditions is a \textbf{triangle-free graph}, meaning it contains no triangles (no set of three vertices, all connected by edges).
+Analysis of the Questions
+
+1. **Question (a): Fewer than 31 games played?**
+
+The maximum number of edges in a triangle-free graph with \( n \) vertices is given by Turán’s theorem. For \( n = 10 \):
+   \[
+   \text{Maximum edges} \leq \left\lfloor \frac{n^2}{4} \right\rfloor = \left\lfloor \frac{10^2}{4} \right\rfloor = \left\lfloor 25 \right\rfloor = 25
+   \]
+   Therefore, it is certain that fewer than 31 games were played.
+
+\textbf{Answer: Yes}
+
+2. **Question (b): Fewer than 20 games played?**
+
+While we established that fewer than 31 games were played, we need to assess if fewer than 20 is also guaranteed. The maximum number of games (edges) that can be played is 25, but this does not ensure that fewer than 20 were played. It is possible for the number of games to be between 20 and 25, thus we cannot conclude that fewer than 20 games were played for certain.
+
+\textbf{Answer: No}
+
+3. **Question (c): Could there have been exactly 25 games played?**
+
+From our earlier calculations, we know that the maximum possible number of games is 25. Thus, it is possible for the players to have played exactly 25 games while adhering to the given constraints.
+
+\textbf{Answer: Yes}
+
+4. **Question (d): Fewer than 35 games played?**
+
+Since we have established that the maximum number of games played is 25, it follows that there could not have been 35 games played. Therefore, it is certain that fewer than 35 games were played.
+
+\textbf{Answer: Yes}
+
+\end{document}
