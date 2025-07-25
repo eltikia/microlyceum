@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{Probability Problem Analysis}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+Three businessmen, denoted as A, B, and C, were captured by gangsters. Each was placed in a separate package, and then one package was sent to Chile, one to Norway, and one to Wołomin, with the assignment of packages to locations being random. It is known that it never rains in Chile, that it rains in Norway with a probability of \( \frac{9}{10} \), and that it rains in Wołomin with a probability of \( \frac{3}{10} \). When the package containing businessman A arrived at its destination, he was unpacked and observed that it was raining. Let \( p \) represent the probability that A is in Wołomin, and let \( q \) denote the probability that businessman B also observed rain upon unpacking. We need to determine the truth of the following statements:
+
+\begin{enumerate}
+    \item[a)] \( q < \frac{1}{2} \);
+    \item[b)] \( p = \frac{1}{4} \);
+    \item[c)] \( p = \frac{1}{3} \);
+    \item[d)] \( p = \frac{1}{2} \).
+\end{enumerate}
+
+\section{Analysis}
+We start by determining the probabilities related to the locations and the observed weather conditions. The possible assignments of packages can be represented as follows:
+
+- A to Chile, B to Norway, C to Wołomin
+- A to Norway, B to Chile, C to Wołomin
+- A to Wołomin, B to Chile, C to Norway
+- A to Chile, B to Wołomin, C to Norway
+- A to Norway, B to Wołomin, C to Chile
+- A to Wołomin, B to Norway, C to Chile
+
+There are \( 3! = 6 \) total possible assignments.
+
+We know that it is raining when A is unpacked. The scenarios where A observes rain can only occur if A is either in Norway or Wołomin. Thus, we consider the relevant assignments:
+
+1. A in Norway (where it rains with probability \( \frac{9}{10} \))
+2. A in Wołomin (where it rains with probability \( \frac{3}{10} \))
+
+Next, we calculate the conditional probabilities given that A sees rain.
+
+Let \( R_A \) denote the event that A sees rain. The probability of \( R_A \) occurring can be computed:
+
+\[
+P(R_A | A \text{ in Norway}) = \frac{9}{10}
+\]
+\[
+P(R_A | A \text{ in Wołomin}) = \frac{3}{10}
+\]
+
+Since the assignments are equally likely, the prior probabilities for A being in Norway or Wołomin are:
+
+\[
+P(A \text{ in Norway}) = \frac{1}{3}, \quad P(A \text{ in Wołomin}) = \frac{1}{3}
+\]
+
+Using the law of total probability, we find \( P(R_A) \):
+
+\[
+P(R_A) = P(R_A | A \text{ in Norway}) \cdot P(A \text{ in Norway}) + P(R_A | A \text{ in Wołomin}) \cdot P(A \text{ in Wołomin}) 
+\]
+\[
+= \left( \frac{9}{10} \cdot \frac{1}{3} \right) + \left( \frac{3}{10} \cdot \frac{1}{3} \right) = \frac{9}{30} + \frac{3}{30} = \frac{12}{30} = \frac{2}{5}
+\]
+
+Now, we apply Bayes' theorem to find \( p = P(A \text{ in Wołomin} | R_A) \):
+
+\[
+P(A \text{ in Wołomin} | R_A) = \frac{P(R_A | A \text{ in Wołomin}) \cdot P(A \text{ in Wołomin})}{P(R_A)}
+\]
+\[
+= \frac{\left( \frac{3}{10} \cdot \frac{1}{3} \right)}{\frac{2}{5}} = \frac{\frac{3}{30}}{\frac{2}{5}} = \frac{3}{30} \cdot \frac{5}{2} = \frac{15}{60} = \frac{1}{4}
+\]
+
+Thus, we conclude that \( p = \frac{1}{4} \).
+
+Next, we analyze \( q \), the probability that B also sees rain. Given that A sees rain, B can be in either Norway or Wołomin. The probability that B sees rain when A is in Norway is \( \frac{9}{10} \), and when A is in Wołomin it is \( \frac{3}{10} \).
+
+The relevant probabilities for \( q \) can be computed as follows:
+
+\[
+P(B \text{ sees rain} | A \text{ in Norway}) = \frac{9}{10} \cdot P(A \text{ in Norway} | R_A) = \frac{9}{10} \cdot \frac{\frac{9}{10} \cdot \frac{1}{3}}{\frac{2}{5}} = \frac{9}{10} \cdot \frac{9}{30} \cdot \frac{5}{2}
+\]
+Similarly for Wołomin:
+
+\[
+P(B \text{ sees rain} | A \text{ in Wołomin}) = \frac{3}{10} \cdot P(A \text{ in Wołomin} | R_A) = \frac{3}{10} \cdot \frac{3}{30} \cdot \frac{5}{2}
+\]
+
+Calculating \( q \):
+
+\[
+q = \frac{3}{10} \cdot \frac{1}{4} + \frac{9}{10} \cdot \frac{1}{4} < \frac{1}{2}
+\]
+
+Thus, we have \( q < \frac{1}{2} \).
+
+\section{Conclusions}
+Based on our calculations, we conclude as follows:
+
+\begin{itemize}
+    \item[a)] \( q < \frac{1}{2} \) : \textbf{Yes}
+    \item[b)] \( p = \frac{1}{4} \) : \textbf{Yes}
+    \item[c)] \( p = \frac{1}{3} \) : \textbf{No}
+    \item[d)] \( p = \frac{1}{2} \) : \textbf{No}
+\end{itemize}
+
+\end{document}
