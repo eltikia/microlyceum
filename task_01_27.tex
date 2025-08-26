@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{parskip}
+
+\geometry{a4paper, margin=2.5cm}
+
+\title{Analytical Solution to a Combinatorial Game Problem}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Description}
+
+Consider a deterministic, perfect-information game involving two players, Player A and Player B, who alternate turns. Player A initiates the game with $n$ candies.
+
+On each move, the player in possession of the candies must eat either 2 or 3 candies and then pass the remainder to the opponent. The game terminates when only 1 candy remains, resulting in a draw. The player who consumes the last candy (either the second or third last in the penultimate turn) is declared the winner.
+
+We are tasked with evaluating the truth of four given statements concerning different initial values of $n$. Each statement assumes that both players play optimally.
+
+\section{Analytical Strategy}
+
+Let us define the result of the game starting with $n$ candies under optimal play by both players. The outcomes are classified into three categories:
+
+\begin{itemize}
+    \item \textbf{A win for Player A} — Player A can force a win regardless of Player B’s strategy.
+    \item \textbf{A win for Player B} — Player B can force a win regardless of Player A’s strategy.
+    \item \textbf{A draw} — Both players play optimally, and the game ends with one remaining candy.
+\end{itemize}
+
+We begin by analyzing the base cases:
+\begin{itemize}
+    \item If $n = 1$, the game immediately ends in a draw.
+    \item If $n = 2$ or $n = 3$, Player A can consume all candies and win.
+\end{itemize}
+
+For $n > 3$, Player A must choose either 2 or 3 candies to eat and leave the remaining $n-2$ or $n-3$ candies to Player B, who then follows the same rules. Thus, the outcome for a given $n$ depends recursively on the results for $n-2$ and $n-3$.
+
+Through induction or by building a table of outcomes for consecutive values of $n$, we observe the following periodic pattern with modulus 5:
+
+\begin{itemize}
+    \item If $n \bmod 5 = 1$, the game ends in a draw.
+    \item If $n \bmod 5 = 2$ or $n \bmod 5 = 3$, Player A wins.
+    \item If $n \bmod 5 = 4$, the game ends in a draw.
+    \item If $n \bmod 5 = 0$, Player B wins.
+\end{itemize}
+
+This pattern has been validated by exhaustively computing the outcomes for values of $n$ from 1 through 20 and observing that the results repeat every 5 numbers.
+
+\section{Evaluation of Statements}
+
+\subsection{Statement a}
+
+\textit{If $n = 634$, then if both players play flawlessly, the game will end in a draw.}
+
+\textbf{Calculation:}
+\[
+634 \bmod 5 = 4
+\]
+
+\textbf{Conclusion:} According to the established pattern, if $n \bmod 5 = 4$, then the game ends in a draw.
+
+\textbf{Answer: Yes}
+
+\subsection{Statement b}
+
+\textit{If $n = 63$, then if both players play flawlessly, Player A will win.}
+
+\textbf{Calculation:}
+\[
+63 \bmod 5 = 3
+\]
+
+\textbf{Conclusion:} If $n \bmod 5 = 3$, then Player A can force a win under optimal strategy.
+
+\textbf{Answer: Yes}
+
+\subsection{Statement c}
+
+\textit{If $n = 364$, then if both players play flawlessly, Player A will win.}
+
+\textbf{Calculation:}
+\[
+364 \bmod 5 = 4
+\]
+
+\textbf{Conclusion:} If $n \bmod 5 = 4$, the game ends in a draw.
+
+\textbf{Answer: No}
+
+\subsection{Statement d}
+
+\textit{If $n = 630$, then if both players play flawlessly, Player B will win.}
+
+\textbf{Calculation:}
+\[
+630 \bmod 5 = 0
+\]
+
+\textbf{Conclusion:} If $n \bmod 5 = 0$, Player B wins under optimal play.
+
+\textbf{Answer: Yes}
+
+\section{Final Remarks}
+
+The key to solving this problem lies in recognizing the periodic nature of the outcome based on $n \bmod 5$. This insight permits a complete classification of all initial values of $n$ into one of the three possible outcomes. The periodicity results from the recursive structure of the decision tree rooted in the allowed actions (eating 2 or 3 candies) and the terminal condition (one candy remaining).
+
+\end{document}
