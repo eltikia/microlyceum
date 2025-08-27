@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\title{Logical Analysis of Agent Definition}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+
+In a certain country, an individual $X$ is called an \emph{agent} if there exists a person $Y$ such that $X$ sends reports to $Y$, and for every person $Z$, there exists a person $W$ such that $W$ knows $Z$ and $W$ sends reports to $Y$.
+
+Formally, $X$ is an agent if:
+\begin{equation*}
+    \exists Y \left[ R(X,Y) \land \forall Z \, \exists W \left( K(W,Z) \land R(W,Y) \right) \right]
+\end{equation*}
+
+Where:
+\begin{itemize}
+    \item $R(A,B)$ means that individual $A$ sends reports to individual $B$,
+    \item $K(A,B)$ means that individual $A$ knows individual $B$.
+\end{itemize}
+
+The negation of this definition, i.e., that $X$ is not an agent, is:
+\begin{equation*}
+    \neg \exists Y \left[ R(X,Y) \land \forall Z \, \exists W (K(W,Z) \land R(W,Y)) \right] 
+    \equiv \forall Y \left[ \neg R(X,Y) \lor \exists Z \, \forall W \left( \neg K(W,Z) \lor \neg R(W,Y) \right) \right]
+\end{equation*}
+
+We now analyze each of the given logical statements and determine whether it is logically equivalent to the negation of the definition of agent.
+
+\section{Analysis of Options}
+
+\subsection*{(a)}
+\textbf{Statement:} For every $Y$, at least one of the following holds:
+\begin{itemize}
+    \item[(i)] $X$ does not send reports to $Y$,
+    \item[(ii)] For every $Z$ and $W$, at least one of the following is false:
+    \begin{itemize}
+        \item[(*)] $W$ knows $Z$,
+        \item[(**)] $W$ sends reports to $Y$.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Formal Translation:}
+\begin{equation*}
+    \forall Y \left[ \neg R(X,Y) \lor \forall Z \forall W ( \neg K(W,Z) \lor \neg R(W,Y) ) \right]
+\end{equation*}
+
+\textbf{Evaluation:} This formula is strictly stronger than the correct negation, as it requires the universal quantifier over $Z$ and $W$, rather than just $\exists Z \, \forall W$. Hence, this condition is \textbf{not equivalent}.
+
+\textbf{Answer: No}
+
+\subsection*{(b)}
+\textbf{Statement:} For every $Y$, at least one of the following holds:
+\begin{itemize}
+    \item[(i)] $X$ does not send reports to $Y$,
+    \item[(ii)] It is not true that for every $Z$ there exists a $W$ such that $W$ knows $Z$ and $W$ sends reports to $Y$.
+\end{itemize}
+
+\textbf{Formal Translation:}
+\begin{equation*}
+    \forall Y \left[ \neg R(X,Y) \lor \neg \forall Z \exists W (K(W,Z) \land R(W,Y)) \right]
+    \equiv \forall Y \left[ \neg R(X,Y) \lor \exists Z \forall W ( \neg K(W,Z) \lor \neg R(W,Y) ) \right]
+\end{equation*}
+
+\textbf{Evaluation:} This is exactly the formal negation of the agent definition.
+
+\textbf{Answer: Yes}
+
+\subsection*{(c)}
+\textbf{Statement:} There exists a $Y$ such that at least one of the following holds:
+\begin{itemize}
+    \item[(i)] $X$ does not send reports to $Y$,
+    \item[(ii)] There exists a $Z$ such that for every $W$, at least one of the following holds:
+    \begin{itemize}
+        \item[(*)] $W$ does not send reports to $Y$,
+        \item[(**)] $W$ does not know $Z$.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Formal Translation:}
+\begin{equation*}
+    \exists Y \left[ \neg R(X,Y) \lor \exists Z \forall W ( \neg R(W,Y) \lor \neg K(W,Z) ) \right]
+\end{equation*}
+
+\textbf{Evaluation:} This is weaker than the negation, as it only requires the condition to hold for \emph{some} $Y$, rather than \emph{all}. Therefore, this is \textbf{not equivalent}.
+
+\textbf{Answer: No}
+
+\subsection*{(d)}
+\textbf{Statement:} For every $Y$, at least one of the following holds:
+\begin{itemize}
+    \item[(i)] $X$ does not send reports to $Y$,
+    \item[(ii)] There exists a $Z$ such that for every $W$, at least one of the following holds:
+    \begin{itemize}
+        \item[(*)] $W$ does not send reports to $Y$,
+        \item[(**)] $W$ does not know $Z$.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Formal Translation:}
+\begin{equation*}
+    \forall Y \left[ \neg R(X,Y) \lor \exists Z \forall W ( \neg R(W,Y) \lor \neg K(W,Z) ) \right]
+\end{equation*}
+
+\textbf{Evaluation:} This is logically equivalent to the formal negation of the agent definition. The order and structure of quantifiers matches exactly.
+
+\textbf{Answer: Yes}
+
+\end{document}
