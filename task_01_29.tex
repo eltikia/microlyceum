@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\geometry{a4paper, margin=1in}
+
+\title{Analytical Comparison of Two Polynomial Sequences}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+
+Let \( f_n = a n^2 + b n + 5 \) and \( g_n = c n^2 + d n + 1000 \), where \( a, b, c, d \in \mathbb{N}_0 \) (the set of non-negative integers). We aim to determine which of the following statements are logically equivalent to the assertion:
+
+\begin{quote}
+There exists \( n_0 \in \mathbb{N} \) such that for every \( n > n_0 \), we have \( g_n > f_n \).
+\end{quote}
+
+The candidate statements are:
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+    \item One of the following two substatements holds:
+    \begin{enumerate}[label=(\roman*)]
+        \item \( a < c \)
+        \item \( a = c \) and it is not true that \( b > d \)
+    \end{enumerate}
+    
+    \item \( a \leq c \) and \( b \leq d \)
+    
+    \item There are infinitely many natural numbers \( n \in \mathbb{N} \) such that \( g_n > f_n \)
+    
+    \item The set \( \{ n \in \mathbb{N} : g_n \leq f_n \} \) has a maximum element
+\end{enumerate}
+
+\section{Analytical Setup}
+
+Define the difference of the sequences:
+
+\[
+h(n) := g_n - f_n = (c - a)n^2 + (d - b)n + 995
+\]
+
+We analyze the sign of \( h(n) \) as \( n \to \infty \). The long-term behavior of \( h(n) \) is determined by its leading coefficient \( (c - a) \). We consider three cases:
+
+\begin{itemize}
+    \item If \( c > a \), then \( h(n) \to \infty \) as \( n \to \infty \), hence \( g_n > f_n \) for all sufficiently large \( n \).
+    
+    \item If \( c = a \), then \( h(n) = (d - b)n + 995 \) becomes a linear function:
+    \begin{itemize}
+        \item If \( d > b \), then \( h(n) \to \infty \), so \( g_n > f_n \) eventually.
+        \item If \( d = b \), then \( h(n) = 995 > 0 \) for all \( n \).
+        \item If \( d < b \), then \( h(n) \to -\infty \), so \( g_n < f_n \) for large \( n \).
+    \end{itemize}
+    
+    \item If \( c < a \), then \( h(n) \to -\infty \), thus \( g_n < f_n \) for large \( n \).
+\end{itemize}
+
+Hence, the condition for \( g_n > f_n \) for all \( n > n_0 \) is:
+
+\[
+\boxed{c > a \quad \text{or} \quad (c = a \text{ and } d \geq b)}
+\]
+
+\section{Statement Analysis}
+
+\subsection{Statement a)}
+
+This is logically equivalent to:
+
+\[
+a < c \quad \text{or} \quad (a = c \text{ and } b \leq d)
+\]
+
+This exactly matches the necessary and sufficient condition derived above.
+
+\textbf{Answer: Yes.}
+
+\subsection{Statement b)}
+
+This requires:
+
+\[
+a \leq c \quad \text{and} \quad b \leq d
+\]
+
+This condition is stronger than needed. For instance, if \( a < c \) but \( b > d \), the asymptotic inequality still holds. Therefore, this condition is not equivalent.
+
+\textbf{Answer: No.}
+
+\subsection{Statement c)}
+
+This asserts that \( g_n > f_n \) holds for infinitely many natural numbers \( n \).
+
+In the context of integer domains and polynomial functions with integer coefficients, if a quadratic function \( h(n) \) is positive for infinitely many natural numbers \( n \), and since \( h(n) \) can only change sign finitely many times, it must be eventually always positive. That is, the set \( \{ n \in \mathbb{N} : h(n) \leq 0 \} \) is finite.
+
+Therefore, this condition \emph{is} equivalent to the original statement.
+
+\textbf{Answer: Yes.}
+
+\subsection{Statement d)}
+
+This states that the set \( \{ n \in \mathbb{N} : g_n \leq f_n \} \) has a maximum element, i.e., is finite with an upper bound. This is equivalent to \( g_n > f_n \) for all sufficiently large \( n \).
+
+\textbf{Answer: Yes.}
+
+\end{document}
