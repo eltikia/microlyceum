@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{Analytical Investigation of Integer Squares}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem Statement}
+
+Determine whether there exists an integer \( n \) such that:
+
+\begin{enumerate}
+    \item[(a)] The remainder of \( n^2 \) divided by 4 is equal to 3.
+    \item[(b)] The sum of the digits of \( n^2 \) is equal to 36.
+    \item[(c)] The sum of the digits of \( n^2 \) is equal to 21.
+    \item[(d)] The remainder of \( n^2 \) divided by 8 is equal to 5.
+\end{enumerate}
+
+\section{Analysis}
+
+\subsection{Question (a)}
+
+\textbf{Is there an integer \( n \) such that \( n^2 \equiv 3 \pmod{4} \)?}
+
+Let us analyze the possible values of \( n^2 \mod 4 \). For any integer \( n \), it is either even or odd.
+
+\[
+\begin{aligned}
+n &\equiv 0 \pmod{2} \Rightarrow n^2 \equiv 0 \pmod{4}, \\
+n &\equiv 1 \pmod{2} \Rightarrow n^2 \equiv 1 \pmod{4}.
+\end{aligned}
+\]
+
+Therefore, the only possible values for \( n^2 \mod 4 \) are 0 and 1. Hence:
+
+\textbf{Answer: No.}
+
+\textbf{Explanation:} A square of an integer cannot be congruent to 3 modulo 4.
+
+\subsection{Question (b)}
+
+\textbf{Is there an integer \( n \) such that the sum of the digits of \( n^2 \) is 36?}
+
+When n = 264, then \( n^2 \) = 69696. The sum of digits is 6 + 9 + 6 + 9 + 6 = 36; therefore, such a number exists.
+
+Hence:
+
+\textbf{Answer: Yes.}
+
+\subsection{Question (c)}
+
+\textbf{Is there an integer \( n \) such that the sum of the digits of \( n^2 \) is equal to 21?}
+
+\[
+S(n^2) \equiv n^2 \pmod{9}.
+\]
+
+If \( S(n^2) = 21 \), then \( n^2 \equiv 21 \equiv 3 \pmod{9} \).
+
+We now examine whether 3 can be a quadratic residue modulo 9. The quadratic residues modulo 9 are obtained by squaring all residues modulo 9:
+\[
+\begin{aligned}
+0^2 &\equiv 0, \\
+1^2 &\equiv 1, \\
+2^2 &\equiv 4, \\
+3^2 &\equiv 0, \\
+4^2 &\equiv 7, \\
+5^2 &\equiv 7, \\
+6^2 &\equiv 0, \\
+7^2 &\equiv 4, \\
+8^2 &\equiv 1.
+\end{aligned}
+\]
+
+So the set of quadratic residues modulo 9 is:
+\[
+\{0, 1, 4, 7\}.
+\]
+
+Since \( 3 \not\in \{0, 1, 4, 7\} \), it follows that \( n^2 \not\equiv 3 \pmod{9} \).
+
+\textbf{Answer: No.}
+
+\textbf{Explanation:} Since the sum of the digits of \( n^2 \) equals 21, it must be congruent to 3 modulo 9. But 3 is not a quadratic residue modulo 9, so such an \( n \) does not exist.
+
+\subsection{Question (d)}
+
+\textbf{Is there an integer \( n \) such that \( n^2 \equiv 5 \pmod{8} \)?}
+
+We examine the possible quadratic residues modulo 8:
+
+\[
+\begin{aligned}
+n &\equiv 0 \pmod{8} \Rightarrow n^2 \equiv 0 \pmod{8}, \\
+n &\equiv 1 \pmod{8} \Rightarrow n^2 \equiv 1 \pmod{8}, \\
+n &\equiv 2 \pmod{8} \Rightarrow n^2 \equiv 4 \pmod{8}, \\
+n &\equiv 3 \pmod{8} \Rightarrow n^2 \equiv 1 \pmod{8}, \\
+n &\equiv 4 \pmod{8} \Rightarrow n^2 \equiv 0 \pmod{8}, \\
+n &\equiv 5 \pmod{8} \Rightarrow n^2 \equiv 1 \pmod{8}, \\
+n &\equiv 6 \pmod{8} \Rightarrow n^2 \equiv 4 \pmod{8}, \\
+n &\equiv 7 \pmod{8} \Rightarrow n^2 \equiv 1 \pmod{8}.
+\end{aligned}
+\]
+
+Thus, possible values of \( n^2 \mod 8 \) are:
+\[
+\{0, 1, 4\}.
+\]
+
+\textbf{Answer: No.}
+
+\textbf{Explanation:} Since 5 is not a quadratic residue modulo 8, there does not exist any integer \( n \) such that \( n^2 \equiv 5 \pmod{8} \).
+
+\section{Conclusion}
+
+\begin{itemize}
+    \item[(a)] No.
+    \item[(b)] Yes.
+    \item[(c)] No.
+    \item[(d)] No.
+\end{itemize}
+
+\end{document}
