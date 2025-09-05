@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\title{Analysis of the Existence of Real Solutions for Given Polynomial Equations}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+
+Determine whether the following polynomial equations possess at least one real solution.
+
+\begin{enumerate}
+    \item[(a)] \( x^6 + 5x^3 + 5 = 0 \)
+    \item[(b)] \( x^6 + 5x^2 + 5 = 0 \)
+    \item[(c)] \( x^5 + 2x^4 + 3x^3 + 4x^2 + 5x + 6 = 0 \)
+    \item[(d)] \( x^2 + 127x - 11 = 0 \)
+\end{enumerate}
+
+Each subproblem is examined separately below.
+
+\section{Analysis and Solution}
+
+\subsection{Equation (a): \( x^6 + 5x^3 + 5 = 0 \)}
+
+Let us denote \( y = x^3 \). The equation becomes:
+\[
+y^2 + 5y + 5 = 0
+\]
+Solving this quadratic equation:
+\[
+y = \frac{-5 \pm \sqrt{25 - 4 \cdot 1 \cdot 5}}{2} = \frac{-5 \pm \sqrt{5}}{2}
+\]
+Both roots are real and negative, as the discriminant \( \sqrt{5} \) is real and the numerator is negative.
+
+Now, recall that \( y = x^3 \), so we need to check whether the equation \( x^3 = y \) has a real solution for a given negative \( y \). Since the cube root function is defined and continuous for all real numbers and preserves the sign of negative inputs, both values of \( y \) correspond to real values of \( x \). Therefore, the original equation has two real solutions.
+
+\textbf{Answer: Yes.} \\
+\textit{Explanation:} The equation reduces to a quadratic in \( x^3 \), which has two real roots. Each of these corresponds to a real cube root, hence two real solutions to the original equation.
+
+\subsection{Equation (b): \( x^6 + 5x^2 + 5 = 0 \)}
+
+Substitute \( y = x^2 \), which implies \( y \geq 0 \). The equation becomes:
+\[
+y^3 + 5y + 5 = 0
+\]
+
+We study the function \( f(y) = y^3 + 5y + 5 \) on the interval \( [0, \infty) \). Note that:
+\[
+f(0) = 5 > 0, \quad \lim_{y \to \infty} f(y) = \infty
+\]
+Moreover, \( f(y) \) is strictly increasing on \( [0, \infty) \) since its derivative \( f'(y) = 3y^2 + 5 > 0 \) for all \( y \in \mathbb{R} \). Thus, \( f(y) > 0 \) for all \( y \geq 0 \), and the equation \( f(y) = 0 \) has no solution for \( y \geq 0 \).
+
+\textbf{Answer: No.} \\
+\textit{Explanation:} The transformed equation in \( y = x^2 \) has no non-negative real solution, and since \( x^2 \geq 0 \), the original equation has no real solution.
+
+\subsection{Equation (c): \( x^5 + 2x^4 + 3x^3 + 4x^2 + 5x + 6 = 0 \)}
+
+Let us denote this function by:
+\[
+f(x) = x^5 + 2x^4 + 3x^3 + 4x^2 + 5x + 6
+\]
+
+We analyze the behavior of this function. Since all coefficients are positive, we consider:
+\[
+f(x) > 0 \text{ for all } x > 0
+\]
+
+Now, we evaluate \( f(x) \) at several negative values:
+\[
+f(-1) = (-1)^5 + 2(-1)^4 + 3(-1)^3 + 4(-1)^2 + 5(-1) + 6 = -1 + 2 - 3 + 4 - 5 + 6 = 3 > 0
+\]
+\[
+f(-2) = (-32) + 2(16) - 3(8) + 4(4) -10 + 6 = -32 + 32 - 24 + 16 -10 + 6 = -12
+\]
+
+So:
+\[
+f(-1) > 0, \quad f(-2) < 0
+\]
+
+Since the function is continuous, and it changes sign in the interval \((-2, -1)\), by the Intermediate Value Theorem, there exists at least one real root in this interval.
+
+\textbf{Answer: Yes.} \\
+\textit{Explanation:} The function is continuous and changes sign between \( x = -2 \) and \( x = -1 \), thus admitting at least one real root.
+
+\subsection{Equation (d): \( x^2 + 127x - 11 = 0 \)}
+
+This is a standard quadratic equation. Its discriminant is:
+\[
+\Delta = 127^2 + 4 \cdot 1 \cdot 11 = 16129 + 44 = 16173
+\]
+
+Since \( \Delta > 0 \), the equation has two distinct real roots.
+
+\textbf{Answer: Yes.} \\
+\textit{Explanation:} The discriminant is positive, ensuring two distinct real roots.
+
+\end{document}
